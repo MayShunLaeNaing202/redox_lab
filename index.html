@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redox Lab: Oxidation and Reduction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+Myanmar:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="20" r="9" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="29" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="22" cy="9" r="3.4" fill="#E3A200"/></svg><span><b>Redox Lab</b></span></a>
+  <span style="display:flex;gap:8px;align-items:center"><button class="theme-btn lang-toggle" type="button"><span class="en">မြန်မာ</span><span class="my">English</span></button><button class="theme-btn theme-toggle" type="button">☾</button><button class="theme-btn" id="menuBtn" aria-expanded="false" aria-controls="side"><span class="en">Menu</span><span class="my">မီနူး</span></button></span>
+</header>
+
+<div class="shell">
+<aside class="side" id="side">
+  <a class="brand" href="#home"><svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true"><circle cx="13" cy="20" r="9" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="29" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="22" cy="9" r="3.4" fill="#E3A200"/></svg><span><b>Redox Lab</b><small><span class="en">Grade 11 Chemistry, Chapter 3</span><span class="my">Grade 11 ဓာတုဗေဒ၊ အခန်း (၃)</span></small></span></a>
+  <nav class="nav" aria-label="Chapter sections">
+    <a href="#home"><span class="n">⌂</span><span class="en">Overview</span><span class="my">မိတ်ဆက်</span></a>
+    <a href="#oxidation-numbers"><span class="n">3.1</span><span class="en">Oxidation numbers</span><span class="my">Oxidation number</span></a>
+    <a href="#concepts"><span class="n">3.2</span><span class="en">Concepts</span><span class="my">အယူအဆများ</span></a>
+    <a href="#redox"><span class="n">3.3</span><span class="en">Redox reactions</span><span class="my">Redox ဓာတ်ပြုမှု</span></a>
+    <a href="#agents"><span class="n">3.4</span><span class="en">Agents</span><span class="my">Agent များ</span></a>
+    <a href="#balancing"><span class="n">3.5</span><span class="en">Balancing</span><span class="my">ချိန်ညှိခြင်း</span></a>
+    <hr>
+    <a href="#practice"><span class="n">✎</span><span class="en">Practice</span><span class="my">လေ့ကျင့်ရန်</span></a>
+    <a href="#chapter-test"><span class="n">✓</span><span class="en">Chapter test</span><span class="my">စာမေးပွဲ</span></a>
+  </nav>
+  <div class="side-foot"><button class="theme-btn lang-toggle" type="button" title="Switch language"><span class="en">မြန်မာ</span><span class="my">English</span></button><button class="theme-btn theme-toggle" id="themeBtn" type="button">☾ Dark mode</button></div>
+</aside>
+
+<main id="main">
+
+<!-- ================= HOME ================= -->
+<section class="view" data-view="home">
+  <div class="hero">
+    <span class="kicker"><span class="en">Grade 11 Chemistry, Chapter 3</span><span class="my">Grade 11 ဓာတုဗေဒ၊ အခန်း (၃)</span></span>
+    <h1><span class="en">Follow the electrons.</span><span class="my">Electron တွေနောက် လိုက်ကြည့်ရအောင်။</span></h1>
+    <p class="lead en">Rusting, batteries, photosynthesis and burning fuel all run on oxidation and reduction. Learn how to track electrons with oxidation numbers, spot redox reactions, and balance their equations, then test yourself.</p>
+    <p class="lead my">သံချေးတက်ခြင်း၊ ဘက်ထရီ၊ photosynthesis နဲ့ လောင်စာ လောင်ကျွမ်းခြင်း စတာတွေ အားလုံးဟာ oxidation နဲ့ reduction ကြောင့် ဖြစ်ပါတယ်။ Oxidation number သုံးပြီး electron တွေကို ခြေရာခံနည်း၊ redox ဓာတ်ပြုမှုကို ခွဲခြားနည်း နဲ့ ညီမျှခြင်း ချိန်ညှိနည်းတို့ကို လေ့လာပြီး ကိုယ့်ကိုယ်ကို စစ်ဆေးကြည့်ပါ။</p>
+    <div class="row">
+      <a class="btn" href="#oxidation-numbers"><span class="en">Start with oxidation numbers</span><span class="my">Oxidation number မှ စတင်ရန်</span></a>
+      <a class="btn ghost" href="#chapter-test"><span class="en">Take the chapter test</span><span class="my">အခန်းဆုံး စာမေးပွဲ ဖြေရန်</span></a>
+    </div>
+  </div>
+  <div class="scale-wrap" id="heroScale"></div>
+  <p class="scale-cap en">Every atom in a compound sits somewhere on this line. When its oxidation number moves right, it is oxidised. When it moves left, it is reduced.</p>
+  <p class="scale-cap my">Compound ထဲက atom တိုင်းဟာ ဒီမျဉ်းပေါ်မှာ နေရာတစ်ခု ရှိပါတယ်။ Oxidation number ညာဘက်ကို ရွေ့ရင် oxidise ဖြစ်ပြီး ဘယ်ဘက်ကို ရွေ့ရင် reduce ဖြစ်ပါတယ်။</p>
+
+  <h3><span class="en">Redox in everyday life</span><span class="my">နေ့စဉ်ဘဝထဲက Redox</span></h3>
+  <div class="life">
+    <div><svg class="pic" viewBox="0 0 160 100" role="img" aria-label="A rusty iron nail with water and oxygen"><path d="M60 14 C66 24 68 28 60 32 C52 28 54 24 60 14Z" fill="#6AA9E9"/><text x="72" y="30" font-size="11" fill="var(--ink-soft)">H₂O</text><text x="108" y="28" font-size="11" fill="var(--ink-soft)">O₂</text><rect x="22" y="38" width="10" height="30" rx="2" fill="#8C96A0"/><path d="M32 46 L128 49 L142 53 L128 57 L32 60Z" fill="#A7B0B8"/><ellipse cx="66" cy="53" rx="15" ry="6" fill="#B5562A"/><ellipse cx="100" cy="53" rx="10" ry="4.5" fill="#C9692F"/><circle cx="48" cy="52" r="3" fill="#8E3B1B"/><circle cx="84" cy="57" r="2.5" fill="#8E3B1B"/><circle cx="118" cy="52" r="2" fill="#B5562A"/><text x="80" y="86" font-size="11" text-anchor="middle" fill="var(--ink-soft)">Fe → Fe³⁺</text></svg><b><span class="en">Rusting</span><span class="my">သံချေးတက်ခြင်း</span></b><p class="en">Iron is oxidised by oxygen and water.</p><p class="my">သံဟာ oxygen နဲ့ ရေကြောင့် oxidise ဖြစ်ပါတယ်။</p></div>
+    <div><svg class="pic" viewBox="0 0 160 100" role="img" aria-label="Electroplating a ring in a beaker connected to a battery"><rect x="68" y="4" width="24" height="11" rx="2" fill="var(--ink)"/><path d="M68 10 H56 V24 M92 10 H104 V24" stroke="var(--ink-soft)" stroke-width="2" fill="none"/><path d="M38 30 V86 Q38 92 44 92 H116 Q122 92 122 86 V30" stroke="var(--ink-soft)" stroke-width="2" fill="none"/><path d="M40 48 V86 Q40 90 44 90 H116 Q120 90 120 86 V48Z" fill="#CFE3F8"/><rect x="52" y="24" width="8" height="52" rx="1" fill="#E3A200"/><line x1="104" y1="24" x2="104" y2="54" stroke="var(--ink-soft)" stroke-width="2"/><circle cx="104" cy="64" r="9" fill="none" stroke="#E3A200" stroke-width="5"/><circle cx="72" cy="62" r="2.5" fill="#C98F00"/><circle cx="82" cy="72" r="2.5" fill="#C98F00"/><circle cx="90" cy="58" r="2.5" fill="#C98F00"/></svg><b><span class="en">Electroplating</span><span class="my">Electroplating</span></b><p class="en">Metal ions are reduced to a thin metal coat.</p><p class="my">သတ္တု ion တွေ reduce ဖြစ်ပြီး ပါးလွှာတဲ့ သတ္တုအလွှာ ဖြစ်လာပါတယ်။</p></div>
+    <div><svg class="pic" viewBox="0 0 160 100" role="img" aria-label="A burning matchstick"><path d="M78 6 C94 24 94 38 78 48 C62 38 62 24 78 6Z" fill="#F2A33A"/><path d="M78 22 C86 30 86 39 78 45 C70 39 70 30 78 22Z" fill="#FFD34D"/><ellipse cx="78" cy="50" rx="7" ry="8" fill="#7A2B1E"/><rect x="74" y="54" width="8" height="40" rx="2" fill="#E7C28A"/><text x="104" y="30" font-size="11" fill="var(--ink-soft)">CO₂</text><text x="104" y="44" font-size="11" fill="var(--ink-soft)">H₂O</text><text x="22" y="38" font-size="11" fill="var(--ink-soft)">+ O₂</text></svg><b><span class="en">Combustion</span><span class="my">လောင်ကျွမ်းခြင်း</span></b><p class="en">Fuel is oxidised and releases energy.</p><p class="my">လောင်စာ oxidise ဖြစ်ပြီး စွမ်းအင် ထုတ်ပေးပါတယ်။</p></div>
+    <div><svg class="pic" viewBox="0 0 160 100" role="img" aria-label="Fresh cooking oil next to dark rancid oil"><rect x="40" y="16" width="14" height="8" rx="2" fill="#C4213A"/><path d="M43 24 H51 V32 Q60 36 60 46 V84 Q60 90 54 90 H40 Q34 90 34 84 V46 Q34 36 43 32Z" fill="#F2C94C" stroke="#C9A227" stroke-width="1.5"/><rect x="106" y="16" width="14" height="8" rx="2" fill="#C4213A"/><path d="M109 24 H117 V32 Q126 36 126 46 V84 Q126 90 120 90 H106 Q100 90 100 84 V46 Q100 36 109 32Z" fill="#8C6A24" stroke="#5E4614" stroke-width="1.5"/><text x="80" y="60" font-size="16" text-anchor="middle" fill="var(--ink-soft)">→</text><text x="47" y="66" font-size="9" text-anchor="middle" fill="#5E4614"><tspan class="en">fresh</tspan><tspan class="my">ကောင်း</tspan></text><text x="113" y="66" font-size="9" text-anchor="middle" fill="#F7EBC8"><tspan class="en">rancid</tspan><tspan class="my">ပုပ်</tspan></text></svg><b><span class="en">Rancidification</span><span class="my">ဆီပုပ်ခြင်း</span></b><p class="en">Fats and oils are oxidised and taste bad.</p><p class="my">အဆီနဲ့ ဆီတွေ oxidise ဖြစ်ပြီး အရသာ ပျက်သွားပါတယ်။</p></div>
+    <div><svg class="pic" viewBox="0 0 160 100" role="img" aria-label="A freshly cut apple next to a browned apple"><ellipse cx="46" cy="56" rx="28" ry="27" fill="#F7EBC8" stroke="#C4213A" stroke-width="4"/><path d="M42 50 q4 -8 8 0 q-4 8 -8 0Z M42 62 q4 -8 8 0 q-4 8 -8 0Z" fill="#5E3A1E"/><path d="M46 29 V18" stroke="#6B4A2B" stroke-width="3" stroke-linecap="round"/><ellipse cx="114" cy="56" rx="28" ry="27" fill="#C9955A" stroke="#A8322E" stroke-width="4"/><path d="M110 50 q4 -8 8 0 q-4 8 -8 0Z M110 62 q4 -8 8 0 q-4 8 -8 0Z" fill="#5E3A1E"/><path d="M114 29 V18" stroke="#6B4A2B" stroke-width="3" stroke-linecap="round"/><text x="80" y="60" font-size="16" text-anchor="middle" fill="var(--ink-soft)">→</text></svg><b><span class="en">Changing colour</span><span class="my">အရောင်ပြောင်းခြင်း</span></b><p class="en">Cut fruit turns brown by oxidation.</p><p class="my">လှီးထားတဲ့ အသီးတွေ oxidation ကြောင့် ညိုသွားပါတယ်။</p></div>
+  </div>
+
+  <h3><span class="en">What you will be able to do</span><span class="my">သင် လုပ်နိုင်လာမယ့် အရာများ</span></h3>
+  <ul class="outcomes en">
+    <li>Assign oxidation numbers to atoms in molecules and ions.</li>
+    <li>Define oxidation and reduction in terms of oxygen, hydrogen, electron transfer and oxidation number.</li>
+    <li>Explain redox reactions and write half-reactions.</li>
+    <li>Identify oxidising and reducing agents.</li>
+    <li>Balance redox equations by the oxidation number method and the half-equation method.</li>
+  </ul>
+  <ul class="outcomes my">
+    <li>Molecule နဲ့ ion တွေထဲက atom တွေကို oxidation number သတ်မှတ်နိုင်မယ်။</li>
+    <li>Oxidation နဲ့ reduction ကို oxygen၊ hydrogen၊ electron လွှဲပြောင်းမှု နဲ့ oxidation number အပေါ် အခြေခံပြီး အဓိပ္ပာယ်ဖွင့်ဆိုနိုင်မယ်။</li>
+    <li>Redox ဓာတ်ပြုမှုကို ရှင်းပြပြီး half-reaction တွေ ရေးနိုင်မယ်။</li>
+    <li>Oxidising agent နဲ့ reducing agent ကို ခွဲခြားနိုင်မယ်။</li>
+    <li>Oxidation number နည်းနဲ့ half-equation နည်းကို သုံးပြီး redox ညီမျှခြင်းတွေကို ချိန်ညှိနိုင်မယ်။</li>
+  </ul>
+
+  <h3><span class="en">Chapter map</span><span class="my">အခန်း လမ်းညွှန်</span></h3>
+  <ul class="map">
+    <li><a href="#oxidation-numbers"><span class="n">3.1</span><span><b><span class="en">Oxidation numbers</span><span class="my">Oxidation number များ</span></b><small><span class="en">Rules, worked examples and a step-by-step calculator</span><span class="my">စည်းမျဉ်းများ၊ တွက်ပြထားသော ဥပမာများ နှင့် အဆင့်လိုက် calculator</span></small></span></a></li>
+    <li><a href="#concepts"><span class="n">3.2</span><span><b><span class="en">Concepts of oxidation and reduction</span><span class="my">Oxidation နှင့် reduction အယူအဆများ</span></b><small><span class="en">Four definitions with an electron transfer animation</span><span class="my">အဓိပ္ပာယ်ဖွင့်ဆိုချက် ၄ မျိုးနှင့် electron လွှဲပြောင်းမှု animation</span></small></span></a></li>
+    <li><a href="#redox"><span class="n">3.3</span><span><b><span class="en">Redox reactions</span><span class="my">Redox ဓာတ်ပြုမှုများ</span></b><small><span class="en">Magnesium and oxygen, half-reactions, spot the redox reaction</span><span class="my">Magnesium နှင့် oxygen၊ half-reaction များ၊ redox ဓာတ်ပြုမှုကို ခွဲခြားခြင်း</span></small></span></a></li>
+    <li><a href="#agents"><span class="n">3.4</span><span><b><span class="en">Oxidising and reducing agents</span><span class="my">Oxidising agent နှင့် reducing agent</span></b><small><span class="en">Definitions, sorting game, identify the agents</span><span class="my">အဓိပ္ပာယ်များ၊ ခွဲခြားရသော ဂိမ်း၊ agent များကို ဖော်ထုတ်ခြင်း</span></small></span></a></li>
+    <li><a href="#balancing"><span class="n">3.5</span><span><b><span class="en">Balancing redox equations</span><span class="my">Redox ညီမျှခြင်း ချိန်ညှိခြင်း</span></b><small><span class="en">Step-by-step: oxidation number method, acidic and alkaline half-equations</span><span class="my">အဆင့်လိုက်: oxidation number နည်း၊ acidic နှင့် alkaline half-equation နည်း</span></small></span></a></li>
+  </ul>
+</section>
+
+<!-- ================= 3.1 ================= -->
+<section class="view" data-view="oxidation-numbers" hidden>
+  <span class="kicker"><span class="en">Section 3.1</span><span class="my">အခန်းခွဲ 3.1</span></span>
+  <h2><span class="en">Oxidation numbers</span><span class="my">Oxidation number များ</span></h2>
+  <p class="lead en">The oxidation number (or oxidation state) of an atom shows how many electrons it has lost or gained compared with the neutral atom. It can be zero, positive or negative.</p>
+  <p class="lead my">Atom တစ်ခုရဲ့ oxidation number (သို့) oxidation state ဆိုတာ neutral atom နဲ့ နှိုင်းယှဉ်ရင် electron ဘယ်နှစ်လုံး ဆုံးရှုံး (သို့) ရရှိထားသလဲ ဆိုတာကို ပြပါတယ်။ သုည၊ အပေါင်း (သို့) အနုတ် ဖြစ်နိုင်ပါတယ်။</p>
+  <div class="pair">
+    <div class="po"><h4><span class="en">Positive oxidation number</span><span class="my">အပေါင်း oxidation number</span></h4><p class="en">The atom has fewer electrons than the neutral atom. In <span class="c">NaCl</span>, sodium is +1.</p><p class="my">Atom မှာ neutral atom ထက် electron နည်းပါတယ်။ <span class="c">NaCl</span> မှာ sodium က +1 ဖြစ်ပါတယ်။</p></div>
+    <div class="pr"><h4><span class="en">Negative oxidation number</span><span class="my">အနုတ် oxidation number</span></h4><p class="en">The atom has more electrons than the neutral atom. In <span class="c">NaCl</span>, chlorine is −1.</p><p class="my">Atom မှာ neutral atom ထက် electron များပါတယ်။ <span class="c">NaCl</span> မှာ chlorine က −1 ဖြစ်ပါတယ်။</p></div>
+  </div>
+
+  <div class="panel">
+    <h4 style="margin-top:0"><span class="en">Sodium gives one electron to chlorine</span><span class="my">Sodium က chlorine ကို electron ၁ လုံး ပေးလိုက်ပါတယ်</span></h4>
+    <svg class="illus" viewBox="0 0 640 215" role="img" aria-label="A sodium atom gives its outer electron to a chlorine atom, forming Na plus and Cl minus">
+      <circle cx="150" cy="105" r="18" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/><circle cx="150" cy="105" r="34" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/><circle cx="150" cy="105" r="52" fill="none" stroke="var(--ink-soft)" stroke-width="1.4" stroke-dasharray="4 5" opacity=".35"/>
+      <g fill="var(--ox)"><circle cx="150" cy="87" r="4.5"/><circle cx="150" cy="123" r="4.5"/><circle cx="184" cy="105" r="4.5"/><circle cx="174" cy="129" r="4.5"/><circle cx="150" cy="139" r="4.5"/><circle cx="126" cy="129" r="4.5"/><circle cx="116" cy="105" r="4.5"/><circle cx="126" cy="81" r="4.5"/><circle cx="150" cy="71" r="4.5"/><circle cx="174" cy="81" r="4.5"/></g>
+      <circle cx="150" cy="105" r="13" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.5"/><text x="150" y="110" font-size="12" font-weight="700" text-anchor="middle" fill="var(--ink)">Na</text>
+      <circle cx="470" cy="105" r="18" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/><circle cx="470" cy="105" r="34" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/><circle cx="470" cy="105" r="52" fill="none" stroke="var(--ink-soft)" stroke-width="1.4"/>
+      <g fill="var(--ink-soft)"><circle cx="470" cy="87" r="4.5"/><circle cx="470" cy="123" r="4.5"/><circle cx="504" cy="105" r="4.5"/><circle cx="494" cy="129" r="4.5"/><circle cx="470" cy="139" r="4.5"/><circle cx="446" cy="129" r="4.5"/><circle cx="436" cy="105" r="4.5"/><circle cx="446" cy="81" r="4.5"/><circle cx="470" cy="71" r="4.5"/><circle cx="494" cy="81" r="4.5"/><circle cx="522" cy="105" r="4.5"/><circle cx="507" cy="142" r="4.5"/><circle cx="470" cy="157" r="4.5"/><circle cx="433" cy="142" r="4.5"/><circle cx="433" cy="68" r="4.5"/><circle cx="470" cy="53" r="4.5"/><circle cx="507" cy="68" r="4.5"/></g>
+      <circle cx="418" cy="105" r="6" fill="var(--e)" stroke="var(--ink)" stroke-width="1"/>
+      <circle cx="470" cy="105" r="13" fill="var(--surface-2)" stroke="var(--ink)" stroke-width="1.5"/><text x="470" y="110" font-size="12" font-weight="700" text-anchor="middle" fill="var(--ink)">Cl</text>
+      <path d="M206 96 Q310 8 410 96" fill="none" stroke="var(--e)" stroke-width="2.5" stroke-dasharray="6 6"/><text x="310" y="42" font-size="15" font-weight="700" text-anchor="middle" fill="var(--ink)">1 e⁻</text>
+      <text x="150" y="186" font-size="15" font-weight="700" text-anchor="middle" fill="var(--ox)"><tspan class="en">Na⁺ (2.8): lost 1 e⁻, so +1</tspan><tspan class="my">Na⁺ (2.8): e⁻ ၁ လုံး ဆုံး၊ ဒါကြောင့် +1</tspan></text>
+      <text x="470" y="186" font-size="15" font-weight="700" text-anchor="middle" fill="var(--rd)"><tspan class="en">Cl⁻ (2.8.8): gained 1 e⁻, so −1</tspan><tspan class="my">Cl⁻ (2.8.8): e⁻ ၁ လုံး ရ၊ ဒါကြောင့် −1</tspan></text>
+    </svg>
+  </div>
+
+  <h3><span class="en">Rules for assigning oxidation numbers</span><span class="my">Oxidation number သတ်မှတ်ရာတွင် စည်းမျဉ်းများ</span></h3>
+  <ol class="rules en">
+    <li>Every element on its own has oxidation number 0, whether it is monoatomic, diatomic or triatomic (<span class="c">Cu, He, H2, O2, I2, F2, O3</span>).</li>
+    <li>In a neutral molecule, the oxidation numbers add up to 0 (<span class="c">KMnO4, NaCl</span>).</li>
+    <li>In a polyatomic ion, the oxidation numbers add up to the charge on the ion (<span class="c">MnO4^-, NH4^+</span>).</li>
+    <li>Hydrogen is +1, except in metal hydrides where it is −1 (<span class="c">NaH, LiH, CaH2</span>).</li>
+    <li>Oxygen is −2, except in peroxides where it is −1 (<span class="c">H2O2, BaO2, Na2O2</span>) and in <span class="c">OF2</span> where it is +2.</li>
+    <li>Metals in ionic compounds are positive. Alkali metals are +1 and alkaline earth metals are +2.</li>
+    <li>Halogens are −1 in compounds such as <span class="c">BaCl2, NaBr, KI</span>. In interhalogens (<span class="c">BrF3, IF7, ClF3</span>) and oxygen compounds (<span class="c">KClO3, NaOCl</span>) the halogen is positive.</li>
+    <li>In covalent compounds, the negative oxidation number goes to the more electronegative atom.</li>
+  </ol>
+  <ol class="rules my">
+    <li>Element တစ်မျိုးတည်း သီးသန့်ရှိရင် monoatomic၊ diatomic (သို့) triatomic ဖြစ်ပါစေ oxidation number 0 ဖြစ်ပါတယ် (<span class="c">Cu, He, H2, O2, I2, F2, O3</span>)။</li>
+    <li>Neutral molecule တစ်ခုမှာ oxidation number များ ပေါင်းလဒ် 0 ဖြစ်ပါတယ် (<span class="c">KMnO4, NaCl</span>)။</li>
+    <li>Polyatomic ion တစ်ခုမှာ oxidation number များ ပေါင်းလဒ်ဟာ ion ရဲ့ charge နဲ့ ညီပါတယ် (<span class="c">MnO4^-, NH4^+</span>)။</li>
+    <li>Hydrogen က +1 ဖြစ်ပြီး metal hydride တွေမှာတော့ −1 ဖြစ်ပါတယ် (<span class="c">NaH, LiH, CaH2</span>)။</li>
+    <li>Oxygen က −2 ဖြစ်ပြီး peroxide တွေမှာ −1 (<span class="c">H2O2, BaO2, Na2O2</span>) နဲ့ <span class="c">OF2</span> မှာ +2 ဖြစ်ပါတယ်။</li>
+    <li>Ionic compound ထဲက သတ္တုတွေဟာ အပေါင်း ဖြစ်ပါတယ်။ Alkali metal တွေက +1၊ alkaline earth metal တွေက +2 ဖြစ်ပါတယ်။</li>
+    <li>Halogen တွေဟာ <span class="c">BaCl2, NaBr, KI</span> လို compound တွေမှာ −1 ဖြစ်ပါတယ်။ Interhalogen (<span class="c">BrF3, IF7, ClF3</span>) နဲ့ oxygen ပါတဲ့ compound (<span class="c">KClO3, NaOCl</span>) တွေမှာတော့ halogen က အပေါင်း ဖြစ်ပါတယ်။</li>
+    <li>Covalent compound တွေမှာ အနုတ် oxidation number ကို electronegativity ပိုများတဲ့ atom က ယူပါတယ်။</li>
+  </ol>
+
+  <h3><span class="en">Three steps to find an oxidation number</span><span class="my">Oxidation number ရှာရန် အဆင့် ၃ ဆင့်</span></h3>
+  <ol class="steps">
+    <li><span class="en">Write the oxidation number of each known atom below its symbol.</span><span class="my">သိပြီးသား atom တစ်ခုချင်းရဲ့ oxidation number ကို သင်္ကေတ အောက်မှာ ရေးပါ။</span></li>
+    <li><span class="en">Multiply each oxidation number by the number of atoms of that element.</span><span class="my">Oxidation number တစ်ခုချင်းကို အဲဒီ element ရဲ့ atom အရေအတွက်နဲ့ မြှောက်ပါ။</span></li>
+    <li><span class="en">Write the sum and set it equal to 0 for a compound, or to the charge for an ion. Solve for the unknown.</span><span class="my">ပေါင်းလဒ်ကို compound ဆိုရင် 0၊ ion ဆိုရင် charge နဲ့ ညီအောင် ရေးပြီး မသိကိန်းကို ရှာပါ။</span></li>
+  </ol>
+
+  <div class="panel">
+    <h4><span class="en">Example 1: sulphur in sulphuric acid,</span><span class="my">ဥပမာ ၁: sulphuric acid ထဲက sulphur,</span> <span class="c">H2SO4</span></h4>
+    <div class="scroll-x"><table>
+      <tr><th></th><th>2 H</th><th>1 S</th><th>4 O</th><th></th></tr>
+      <tr><td><span class="en">Step 1</span><span class="my">အဆင့် ၁</span></td><td>+1</td><td>S</td><td>−2</td><td></td></tr>
+      <tr><td><span class="en">Step 2</span><span class="my">အဆင့် ၂</span></td><td>2(+1)</td><td>S</td><td>4(−2)</td><td></td></tr>
+      <tr><td><span class="en">Step 3</span><span class="my">အဆင့် ၃</span></td><td>+2</td><td>+ S</td><td>+ (−8)</td><td><span class="en">= 0, so S = </span><span class="my">= 0 ဖြစ်လို့ S = </span><b class="o">+6</b></td></tr>
+    </table></div>
+  </div>
+  <div class="panel">
+    <h4><span class="en">Example 2: manganese in the permanganate ion,</span><span class="my">ဥပမာ ၂: permanganate ion ထဲက manganese,</span> <span class="c">MnO4^-</span></h4>
+    <div class="scroll-x"><table>
+      <tr><th></th><th>1 Mn</th><th>4 O</th><th></th></tr>
+      <tr><td><span class="en">Step 1</span><span class="my">အဆင့် ၁</span></td><td>Mn</td><td>−2</td><td></td></tr>
+      <tr><td><span class="en">Step 2</span><span class="my">အဆင့် ၂</span></td><td>Mn</td><td>4(−2)</td><td></td></tr>
+      <tr><td><span class="en">Step 3</span><span class="my">အဆင့် ၃</span></td><td>Mn</td><td>+ (−8)</td><td><span class="en">= −1 (charge on the ion), so Mn = </span><span class="my">= −1 (ion ရဲ့ charge) ဖြစ်လို့ Mn = </span><b class="o">+7</b></td></tr>
+    </table></div>
+  </div>
+
+  <div class="panel" id="calc">
+    <h3><span class="en">Oxidation number calculator</span><span class="my">Oxidation number calculator</span></h3>
+    <p class="note en">Type a formula (capital letters matter: <b>Co</b> is cobalt, <b>CO</b> is carbon monoxide). Choose the charge for an ion. The calculator uses the same three steps as the textbook.</p>
+    <p class="note my">Formula ကို ရိုက်ထည့်ပါ (စာလုံး အကြီးအသေး အရေးကြီးပါတယ်: <b>Co</b> က cobalt၊ <b>CO</b> က carbon monoxide)။ Ion ဆိုရင် charge ကို ရွေးပါ။ Calculator က textbook ထဲက အဆင့် ၃ ဆင့်အတိုင်း တွက်ပေးပါတယ်။</p>
+    <div class="calc-form">
+      <div class="field"><label for="calc-input">Formula</label><input id="calc-input" value="H2SO4" autocomplete="off" spellcheck="false"></div>
+      <div class="field"><label for="calc-charge">Charge</label>
+        <select id="calc-charge"><option value="-3">3−</option><option value="-2">2−</option><option value="-1">1−</option><option value="0" selected>0 (neutral)</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select></div>
+      <button class="btn" id="calc-go"><span class="en">Find oxidation numbers</span><span class="my">Oxidation number ရှာရန်</span></button>
+    </div>
+    <p class="note" style="margin-top:12px;margin-bottom:6px"><span class="en">Review question examples:</span><span class="my">Review question ဥပမာများ:</span></p>
+    <div class="row" id="calc-chips"></div>
+    <div class="calc-out" id="calc-out" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ================= 3.2 ================= -->
+<section class="view" data-view="concepts" hidden>
+  <span class="kicker"><span class="en">Section 3.2</span><span class="my">အခန်းခွဲ 3.2</span></span>
+  <h2><span class="en">Concepts of oxidation and reduction</span><span class="my">Oxidation နှင့် reduction အယူအဆများ</span></h2>
+  <p class="lead en">Oxidation and reduction can be described in four ways: by oxygen, by hydrogen, by electrons, or by oxidation numbers. Each newer definition covers more reactions than the one before.</p>
+  <p class="lead my">Oxidation နဲ့ reduction ကို နည်း ၄ မျိုးနဲ့ ဖော်ပြနိုင်ပါတယ်: oxygen၊ hydrogen၊ electron (သို့) oxidation number အပေါ် အခြေခံပြီး ဖြစ်ပါတယ်။ နောက်ပိုင်း အဓိပ္ပာယ်ဖွင့်ဆိုချက်တွေက ဓာတ်ပြုမှု ပိုများများကို အကျုံးဝင်ပါတယ်။</p>
+
+  <div class="tabs" role="tablist" aria-label="Definitions">
+    <button class="tab" role="tab" id="t-a" aria-controls="p-a" aria-selected="true">Oxygen</button>
+    <button class="tab" role="tab" id="t-b" aria-controls="p-b" aria-selected="false" tabindex="-1">Hydrogen</button>
+    <button class="tab" role="tab" id="t-c" aria-controls="p-c" aria-selected="false" tabindex="-1"><span class="en">Electron transfer</span><span class="my">Electron လွှဲပြောင်းမှု</span></button>
+    <button class="tab" role="tab" id="t-d" aria-controls="p-d" aria-selected="false" tabindex="-1">Oxidation number</button>
+  </div>
+  <div class="tabpanel" role="tabpanel" id="p-a" aria-labelledby="t-a">
+    <div class="pair">
+      <div class="po"><h4><span class="en">Oxidation: gain of oxygen</span><span class="my">Oxidation: oxygen ရခြင်း</span></h4><p class="en">In lightning, nitrogen gains oxygen, so nitrogen is oxidised to nitrogen oxide.</p><p class="my">လျှပ်စီးလက်ချိန်မှာ nitrogen က oxygen ရလို့ nitrogen oxide အဖြစ် oxidise ဖြစ်ပါတယ်။</p><div class="eq c">N2 (g) + O2 (g) → 2NO (g)</div></div>
+      <div class="pr"><h4><span class="en">Reduction: loss of oxygen</span><span class="my">Reduction: oxygen ဆုံးခြင်း</span></h4><p class="en">Heated with coke, copper(II) oxide loses oxygen, so it is reduced to copper.</p><p class="my">Coke နဲ့ အပူပေးတဲ့အခါ copper(II) oxide က oxygen ဆုံးလို့ copper အဖြစ် reduce ဖြစ်ပါတယ်။</p><div class="eq c">2CuO (s) + C (s) → 2Cu (s) + CO2 (g)</div></div>
+    </div>
+  </div>
+  <div class="tabpanel" role="tabpanel" id="p-b" aria-labelledby="t-b" hidden>
+    <div class="pair">
+      <div class="po"><h4><span class="en">Oxidation: loss of hydrogen</span><span class="my">Oxidation: hydrogen ဆုံးခြင်း</span></h4><p class="en">Hydrogen sulphide loses hydrogen, so it is oxidised.</p><p class="my">Hydrogen sulphide က hydrogen ဆုံးလို့ oxidise ဖြစ်ပါတယ်။</p><div class="eq c">Cl2 (g) + H2S (g) → S (s) + 2HCl (g)</div></div>
+      <div class="pr"><h4><span class="en">Reduction: gain of hydrogen</span><span class="my">Reduction: hydrogen ရခြင်း</span></h4><p class="en">Chlorine gains hydrogen, so it is reduced.</p><p class="my">Chlorine က hydrogen ရလို့ reduce ဖြစ်ပါတယ်။</p><div class="eq c">H2 (g) + Cl2 (g) → 2HCl (g)</div></div>
+    </div>
+    <p class="note en" style="margin-top:14px">Oxygen is an electronegative element and hydrogen is electropositive, so the definitions extend to them: adding an electronegative element is oxidation, adding an electropositive element is reduction.</p>
+    <p class="note my" style="margin-top:14px">Oxygen က electronegative element ဖြစ်ပြီး hydrogen က electropositive element ဖြစ်ပါတယ်။ ဒါကြောင့် electronegative element ထပ်ပေါင်းခြင်းကို oxidation၊ electropositive element ထပ်ပေါင်းခြင်းကို reduction လို့ ချဲ့ထွင် သတ်မှတ်ပါတယ်။</p>
+  </div>
+  <div class="tabpanel" role="tabpanel" id="p-c" aria-labelledby="t-c" hidden>
+    <p class="en">Many redox reactions involve no oxygen or hydrogen at all. Here zinc gives two electrons to a copper(II) ion.</p>
+    <p class="my">Redox ဓာတ်ပြုမှု အများအပြားမှာ oxygen (သို့) hydrogen လုံးဝ မပါပါဘူး။ ဒီမှာ zinc က copper(II) ion ကို electron ၂ လုံး ပေးပါတယ်။</p>
+    <div class="eq c">Zn (s) + Cu^2+ (aq) → Zn^2+ (aq) + Cu (s)</div>
+    <div id="znCu"></div>
+    <div class="row" style="justify-content:center;margin:6px 0 14px"><button class="btn" id="znCuBtn"></button></div>
+    <div class="eq"><span class="c">Zn (s) → Zn^2+ (aq) + 2e^-</span>&nbsp;&nbsp;<span class="o"><span class="en">loss of electrons: oxidation</span><span class="my">electron ဆုံးခြင်း: oxidation</span></span></div>
+    <div class="eq"><span class="c">Cu^2+ (aq) + 2e^- → Cu (s)</span>&nbsp;&nbsp;<span class="r"><span class="en">gain of electrons: reduction</span><span class="my">electron ရခြင်း: reduction</span></span></div>
+    <p class="en"><b>Memory aid: OIL RIG.</b> Oxidation Is Loss, Reduction Is Gain (of electrons).</p>
+    <p class="my"><b>မှတ်ရန်: OIL RIG။</b> Oxidation Is Loss (electron ဆုံး)၊ Reduction Is Gain (electron ရ)။</p>
+  </div>
+  <div class="tabpanel" role="tabpanel" id="p-d" aria-labelledby="t-d" hidden>
+    <p class="en">An element whose oxidation number increases is oxidised. An element whose oxidation number decreases is reduced.</p>
+    <p class="my">Oxidation number တိုးလာတဲ့ element က oxidise ဖြစ်ပြီး oxidation number လျော့သွားတဲ့ element က reduce ဖြစ်ပါတယ်။</p>
+    <div class="eq tall"><span class="ox" data-n="0">P4</span> + 5<span class="ox" data-n="0">O2</span> + 6H<sub>2</sub>O → 4<span class="ox" data-n="+1 +5 −2">H3PO4</span></div>
+    <p><span class="o"><span class="en">Phosphorus: 0 → +5, oxidised.</span><span class="my">Phosphorus: 0 → +5၊ oxidise ဖြစ်။</span></span> <span class="r"><span class="en">Oxygen (from O<sub>2</sub>): 0 → −2, reduced.</span><span class="my">Oxygen (O<sub>2</sub> မှ): 0 → −2၊ reduce ဖြစ်။</span></span></p>
+  </div>
+
+  <h3><span class="en">All four definitions together</span><span class="my">အဓိပ္ပာယ်ဖွင့်ဆိုချက် ၄ မျိုး စုစုပေါင်း</span></h3>
+  <div class="scroll-x"><table class="cmp">
+    <tr><th><span class="en">In terms of</span><span class="my">အခြေခံချက်</span></th><th>Oxidation</th><th>Reduction</th></tr>
+    <tr><td>Oxygen</td><td><span class="en">Gain of oxygen</span><span class="my">Oxygen ရခြင်း</span></td><td><span class="en">Loss of oxygen</span><span class="my">Oxygen ဆုံးခြင်း</span></td></tr>
+    <tr><td>Hydrogen</td><td><span class="en">Loss of hydrogen</span><span class="my">Hydrogen ဆုံးခြင်း</span></td><td><span class="en">Gain of hydrogen</span><span class="my">Hydrogen ရခြင်း</span></td></tr>
+    <tr><td>Electron</td><td><span class="en">Loss of electrons</span><span class="my">Electron ဆုံးခြင်း</span></td><td><span class="en">Gain of electrons</span><span class="my">Electron ရခြင်း</span></td></tr>
+    <tr><td>Oxidation number</td><td><span class="en">Increase</span><span class="my">တိုးခြင်း</span></td><td><span class="en">Decrease</span><span class="my">လျော့ခြင်း</span></td></tr>
+  </table></div>
+</section>
+
+<!-- ================= 3.3 ================= -->
+<section class="view" data-view="redox" hidden>
+  <span class="kicker"><span class="en">Section 3.3</span><span class="my">အခန်းခွဲ 3.3</span></span>
+  <h2><span class="en">Redox reactions</span><span class="my">Redox ဓာတ်ပြုမှုများ</span></h2>
+  <p class="lead en">Oxidation and reduction always happen together. If one substance loses electrons, another must gain them. Reactions with both processes are called redox reactions, and the two separate parts are called half-reactions.</p>
+  <p class="lead my">Oxidation နဲ့ reduction ဟာ အမြဲတမ်း အတူတကွ ဖြစ်ပါတယ်။ Substance တစ်ခုက electron ဆုံးရင် နောက်တစ်ခုက ရရပါမယ်။ နှစ်မျိုးလုံး ပါဝင်တဲ့ ဓာတ်ပြုမှုကို redox reaction လို့ ခေါ်ပြီး သီးခြားအပိုင်း ၂ ခုကို half-reaction လို့ ခေါ်ပါတယ်။</p>
+
+  <div class="panel">
+    <h3><span class="en">Burning magnesium ribbon</span><span class="my">Magnesium ပြား လောင်ကျွမ်းခြင်း</span></h3>
+    <p class="note en">Magnesium (2.8.2) gives its two outer electrons to oxygen (2.6). Both end up with a full outer shell of eight.</p>
+    <p class="note my">Magnesium (2.8.2) က အပြင်ဘက် electron ၂ လုံးကို oxygen (2.6) ကို ပေးပါတယ်။ နှစ်ခုလုံး အပြင်ဆုံး shell မှာ electron ၈ လုံး ပြည့်သွားပါတယ်။</p>
+    <div id="mgO"></div>
+    <div class="row" style="justify-content:center;margin:6px 0 14px"><button class="btn" id="mgOBtn"></button></div>
+    <div class="eq"><span class="c">Mg → Mg^2+ + 2e^-</span>&nbsp;&nbsp;<span class="o"><span class="en">oxidation, loss of electrons</span><span class="my">oxidation၊ electron ဆုံးခြင်း</span></span></div>
+    <div class="eq"><span class="c">½O2 + 2e^- → O^2-</span>&nbsp;&nbsp;<span class="r"><span class="en">reduction, gain of electrons</span><span class="my">reduction၊ electron ရခြင်း</span></span></div>
+  </div>
+
+  <div class="panel">
+    <h3><span class="en">Is it a redox reaction?</span><span class="my">Redox ဓာတ်ပြုမှု ဟုတ်သလား?</span></h3>
+    <p class="note en">Check whether any oxidation number changes. Choose an answer for each reaction.</p>
+    <p class="note my">Oxidation number တစ်ခုခု ပြောင်းသလား စစ်ကြည့်ပါ။ ဓာတ်ပြုမှု တစ်ခုချင်းအတွက် အဖြေ ရွေးပါ။</p>
+    <ul class="checks" id="redoxChecks"></ul>
+    <p class="score-line" id="redoxScore"></p>
+  </div>
+
+  <h3><span class="en">Chemistry in society</span><span class="my">လူ့အဖွဲ့အစည်းထဲက ဓာတုဗေဒ</span></h3>
+  <div class="society">
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 6 C46 22 48 36 32 52 C16 36 18 22 32 6Z" fill="#F2A33A"/><path d="M32 26 C39 33 39 41 32 48 C25 41 25 33 32 26Z" fill="#FFD34D"/><rect x="18" y="52" width="28" height="6" rx="2" fill="#8A5A2B"/></svg><p><span class="en">Burning petrol, gas and wood is oxidation that releases the energy we use every day.</span><span class="my">ဓာတ်ဆီ၊ ဂက်စ် နဲ့ ထင်း လောင်ကျွမ်းခြင်းဟာ နေ့စဉ် သုံးတဲ့ စွမ်းအင်ကို ထုတ်ပေးတဲ့ oxidation ဖြစ်ပါတယ်။</span></p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M24 22 q-4 -6 0 -12 M32 22 q-4 -6 0 -12 M40 22 q-4 -6 0 -12" stroke="var(--ink-soft)" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M10 32 H54 A22 20 0 0 1 10 32Z" fill="var(--green)"/><ellipse cx="32" cy="32" rx="22" ry="5" fill="#F4F1E6" stroke="var(--green)" stroke-width="2"/></svg><p><span class="en">Oxidation of food in the body releases energy for biochemical reactions.</span><span class="my">ခန္ဓာကိုယ်ထဲမှာ အစာ oxidise ဖြစ်ခြင်းက biochemical ဓာတ်ပြုမှုတွေအတွက် စွမ်းအင် ထုတ်ပေးပါတယ်။</span></p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 18 C20 10 8 20 10 36 C12 52 24 58 32 54 C40 58 52 52 54 36 C56 20 44 10 32 18Z" fill="#C4213A"/><path d="M32 22 C24 18 16 26 17 37 C18 48 26 52 32 50Z" fill="#F7EBC8"/><path d="M32 22 C40 18 48 26 47 37 C46 48 38 52 32 50Z" fill="#C9955A"/><path d="M32 18 V8" stroke="#6B4A2B" stroke-width="3" stroke-linecap="round"/></svg><p><span class="en">Oxidation of fats and oils causes rancidity, and oxidation turns cut apples brown.</span><span class="my">အဆီနဲ့ ဆီတွေ oxidise ဖြစ်ရင် ပုပ်သွားပြီး လှီးထားတဲ့ ပန်းသီးတွေလည်း oxidation ကြောင့် ညိုသွားပါတယ်။</span></p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="32" width="40" height="20" rx="3" fill="#F6D86B" stroke="#C9A227" stroke-width="2"/><path d="M30 28 L56 12 L58 15 L34 31Z" fill="#B9C0C8"/></svg><p><span class="en">Margarine is made by reducing (adding hydrogen to) oils from corn, peanuts and soybeans.</span><span class="my">Margarine ကို ပြောင်း၊ မြေပဲ နဲ့ ပဲပိစပ်ဆီတွေကို reduce လုပ်ပြီး (hydrogen ထည့်ပြီး) ပြုလုပ်ပါတယ်။</span></p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="27" y="4" width="8" height="12" rx="2" fill="#E2EBFA" stroke="var(--ink-soft)" stroke-width="1.5"/><rect x="18" y="14" width="26" height="44" rx="6" fill="var(--ink-soft)"/><rect x="22" y="20" width="18" height="12" rx="2" fill="#BFE8C9"/><circle cx="31" cy="45" r="5" fill="var(--green)"/></svg><p><span class="en">Breathalysers estimate alcohol in a driver’s breath using a redox reaction.</span><span class="my">Breathalyser တွေက redox ဓာတ်ပြုမှုကို သုံးပြီး ယာဉ်မောင်းရဲ့ အသက်ရှူထဲက အရက်ပမာဏကို ခန့်မှန်းပါတယ်။</span></p></div>
+    <div><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="20" width="44" height="26" rx="4" fill="none" stroke="var(--ink)" stroke-width="3"/><rect x="52" y="28" width="5" height="10" rx="1" fill="var(--ink)"/><rect x="12" y="24" width="26" height="18" rx="2" fill="var(--green)"/><path d="M30 22 L22 34 H29 L25 44 L36 30 H29 Z" fill="#FFD34D"/></svg><p><span class="en">Oxidising and reducing agents purify water, bleach fabrics and store energy in batteries and fuel cells.</span><span class="my">Oxidising agent နဲ့ reducing agent တွေကို ရေသန့်စင်ခြင်း၊ အထည် အရောင်ချွတ်ခြင်း နဲ့ ဘက်ထရီ၊ fuel cell တွေမှာ စွမ်းအင် သိုလှောင်ခြင်းတို့အတွက် သုံးပါတယ်။</span></p></div>
+  </div>
+</section>
+
+<!-- ================= 3.4 ================= -->
+<section class="view" data-view="agents" hidden>
+  <span class="kicker"><span class="en">Section 3.4</span><span class="my">အခန်းခွဲ 3.4</span></span>
+  <h2><span class="en">Oxidising and reducing agents</span><span class="my">Oxidising agent နှင့် reducing agent</span></h2>
+  <p class="lead en">In every redox reaction, one substance causes the other to change. The agent does to others the opposite of what happens to itself.</p>
+  <p class="lead my">Redox ဓာတ်ပြုမှုတိုင်းမှာ substance တစ်ခုက နောက်တစ်ခုကို ပြောင်းလဲစေပါတယ်။ Agent ဟာ တခြားအရာကို သူကိုယ်တိုင် ဖြစ်တာနဲ့ ဆန့်ကျင်ဘက် ဖြစ်စေပါတယ်။</p>
+  <div class="pair">
+    <div class="pr"><h4>Oxidising agent (oxidant)</h4><p class="en">Accepts electrons and is <b>reduced</b> itself. It helps the other substance get oxidised. It is usually in one of its higher oxidation states.</p><p class="my">Electron လက်ခံပြီး သူကိုယ်တိုင် <b>reduce</b> ဖြစ်ပါတယ်။ တခြား substance ကို oxidise ဖြစ်အောင် ကူညီပါတယ်။ များသောအားဖြင့် oxidation state မြင့်တဲ့ အခြေအနေမှာ ရှိပါတယ်။</p><p class="note en">Examples: oxygen, halogens, concentrated sulphuric acid, nitric acid, hydrogen peroxide, potassium permanganate, potassium dichromate, metal oxides.</p><p class="note my">ဥပမာ: oxygen၊ halogen များ၊ concentrated sulphuric acid၊ nitric acid၊ hydrogen peroxide၊ potassium permanganate၊ potassium dichromate၊ metal oxide များ။</p></div>
+    <div class="po"><h4>Reducing agent (reductant)</h4><p class="en">Donates electrons and is <b>oxidised</b> itself. It helps the other substance get reduced. It is usually in one of its lower oxidation states.</p><p class="my">Electron ပေးပြီး သူကိုယ်တိုင် <b>oxidise</b> ဖြစ်ပါတယ်။ တခြား substance ကို reduce ဖြစ်အောင် ကူညီပါတယ်။ များသောအားဖြင့် oxidation state နိမ့်တဲ့ အခြေအနေမှာ ရှိပါတယ်။</p><p class="note en">Examples: carbon, carbon monoxide, sulphur dioxide, hydrogen sulphide, hydrogen, metals.</p><p class="note my">ဥပမာ: carbon၊ carbon monoxide၊ sulphur dioxide၊ hydrogen sulphide၊ hydrogen၊ သတ္တုများ။</p></div>
+  </div>
+
+  <div class="panel">
+    <h3><span class="en">The redox seesaw</span><span class="my">Redox ဒိန်းခုံ (seesaw)</span></h3>
+    <p class="note en">The reducing agent gives an electron and goes up in oxidation number. The oxidising agent takes it and goes down.</p>
+    <p class="note my">Reducing agent က electron ပေးပြီး oxidation number တိုးလာပါတယ်။ Oxidising agent က electron ယူပြီး oxidation number လျော့သွားပါတယ်။</p>
+    <svg class="illus" viewBox="0 0 600 300" role="img" aria-label="A seesaw: the reducing agent on the high side passes an electron to the oxidising agent on the low side">
+      <defs><marker id="ssA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--e)"/></marker></defs>
+      <path d="M466 92 Q300 0 146 150" fill="none" stroke="var(--e)" stroke-width="3" stroke-dasharray="7 7" marker-end="url(#ssA)"/>
+      <circle cx="300" cy="48" r="14" fill="var(--e)" stroke="var(--ink)" stroke-width="1"/><text x="300" y="53" font-size="13" font-weight="700" text-anchor="middle" fill="#17202A">e⁻</text>
+      <line x1="70" y1="232" x2="530" y2="148" stroke="var(--ink-soft)" stroke-width="8" stroke-linecap="round"/>
+      <path d="M262 262 L338 262 L300 192 Z" fill="var(--green)"/><circle cx="300" cy="222" r="7" fill="#FFD34D"/>
+      <circle cx="122" cy="176" r="16" fill="var(--rd)"/><path d="M108 196 Q122 186 136 196 L136 219 L108 222 Z" fill="var(--rd)"/>
+      <circle cx="478" cy="108" r="16" fill="var(--ox)"/><path d="M464 128 Q478 118 492 128 L492 154 L464 158 Z" fill="var(--ox)"/>
+      <path d="M36 120 V200" stroke="var(--rd)" stroke-width="6"/><path d="M24 196 L36 216 L48 196 Z" fill="var(--rd)"/>
+      <path d="M566 220 V140" stroke="var(--ox)" stroke-width="6"/><path d="M554 144 L566 124 L578 144 Z" fill="var(--ox)"/>
+      <text x="122" y="262" font-size="16" font-weight="700" text-anchor="middle" fill="var(--rd)">Oxidising agent</text><text x="122" y="282" font-size="14" text-anchor="middle" fill="var(--ink-soft)"><tspan class="en">gains e⁻, is reduced</tspan><tspan class="my">e⁻ ရ၊ reduce ဖြစ်</tspan></text>
+      <text x="478" y="196" font-size="16" font-weight="700" text-anchor="middle" fill="var(--ox)">Reducing agent</text><text x="478" y="216" font-size="14" text-anchor="middle" fill="var(--ink-soft)"><tspan class="en">loses e⁻, is oxidised</tspan><tspan class="my">e⁻ ဆုံး၊ oxidise ဖြစ်</tspan></text>
+      <text x="300" y="286" font-size="15" font-weight="700" text-anchor="middle" fill="var(--ink)"><tspan class="en">redox reaction</tspan><tspan class="my">redox ဓာတ်ပြုမှု</tspan></text>
+    </svg>
+  </div>
+
+  <div class="panel">
+    <h3><span class="en">Magnesium and copper(II) oxide</span><span class="my">Magnesium နှင့် copper(II) oxide</span></h3>
+    <div class="eq tall"><span class="ox" data-n="0">Mg</span> (s) + <span class="ox" data-n="+2">CuO</span> (s) → <span class="ox" data-n="0">Cu</span> (s) + <span class="ox" data-n="+2">MgO</span> (s)</div>
+    <p class="en"><span class="o">Mg: 0 → +2.</span> Magnesium loses electrons, so it is oxidised and is the <b>reducing agent</b>.<br><span class="r">Cu: +2 → 0.</span> Copper(II) oxide gains electrons, so it is reduced and is the <b>oxidising agent</b>.</p>
+    <p class="my"><span class="o">Mg: 0 → +2။</span> Magnesium က electron ဆုံးလို့ oxidise ဖြစ်ပြီး <b>reducing agent</b> ဖြစ်ပါတယ်။<br><span class="r">Cu: +2 → 0။</span> Copper(II) oxide က electron ရလို့ reduce ဖြစ်ပြီး <b>oxidising agent</b> ဖြစ်ပါတယ်။</p>
+  </div>
+
+  <div class="panel">
+    <h3><span class="en">Sort the substances</span><span class="my">Substance များကို ခွဲခြားပါ</span></h3>
+    <p class="note"><span class="en">Is each one usually an oxidising agent or a reducing agent?</span><span class="my">တစ်ခုချင်းဟာ များသောအားဖြင့် oxidising agent လား reducing agent လား?</span></p>
+    <div id="sortList"></div>
+    <div class="row" style="justify-content:space-between;margin-top:10px"><p class="score-line" id="sortScore" style="margin:0"></p><button class="btn ghost" id="sortReset"><span class="en">Start again</span><span class="my">ပြန်စရန်</span></button></div>
+  </div>
+
+  <div class="panel">
+    <h3><span class="en">Identify the agents</span><span class="my">Agent များကို ဖော်ထုတ်ပါ</span></h3>
+    <p class="note"><span class="en">Work it out first, then open each reaction to check.</span><span class="my">အရင် ကိုယ်တိုင် စဉ်းစားပြီးမှ ဓာတ်ပြုမှု တစ်ခုချင်းကို ဖွင့်ကြည့်ပါ။</span></p>
+    <div id="identify"></div>
+  </div>
+</section>
+
+<!-- ================= 3.5 ================= -->
+<section class="view" data-view="balancing" hidden>
+  <span class="kicker"><span class="en">Section 3.5</span><span class="my">အခန်းခွဲ 3.5</span></span>
+  <h2><span class="en">Balancing redox equations</span><span class="my">Redox ညီမျှခြင်း ချိန်ညှိခြင်း</span></h2>
+  <p class="lead en">A balanced equation is needed for any calculation. Simple redox equations can be balanced by inspection, but reactions in solution need a method. Pick a worked example and go through it one step at a time.</p>
+  <p class="lead my">တွက်ချက်မှု မှန်သမျှအတွက် ချိန်ညှိပြီးသား ညီမျှခြင်း လိုအပ်ပါတယ်။ ရိုးရှင်းတဲ့ redox ညီမျှခြင်းတွေကို ကြည့်ရုံနဲ့ ချိန်ညှိနိုင်ပေမယ့် solution ထဲက ဓာတ်ပြုမှုတွေအတွက် နည်းလမ်း လိုပါတယ်။ ဥပမာ တစ်ခု ရွေးပြီး တစ်ဆင့်ချင်း လိုက်ကြည့်ပါ။</p>
+
+  <div class="row" role="group" aria-label="Choose an example" id="exChips">
+    <button class="chip" data-ex="0" aria-pressed="true"><span class="en">Oxidation number method</span><span class="my">Oxidation number နည်း</span></button>
+    <button class="chip" data-ex="1" aria-pressed="false"><span class="en">Half-equations, acidic</span><span class="my">Half-equation နည်း (acidic)</span></button>
+    <button class="chip" data-ex="2" aria-pressed="false"><span class="en">Half-equations, alkaline</span><span class="my">Half-equation နည်း (alkaline)</span></button>
+  </div>
+  <div class="panel" id="player">
+    <h3 id="playerTitle" style="margin-top:0"></h3>
+    <ol class="player-steps" id="playerSteps"></ol>
+    <div class="player-bar">
+      <span class="prog" id="playerProg"></span>
+      <div class="row">
+        <button class="btn ghost" id="pPrev"><span class="en">Previous step</span><span class="my">ယခင်အဆင့်</span></button>
+        <button class="btn" id="pNext"><span class="en">Next step</span><span class="my">နောက်အဆင့်</span></button>
+        <button class="btn ghost" id="pAll"><span class="en">Show all steps</span><span class="my">အဆင့်အားလုံး ပြရန်</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3 style="margin-top:0"><span class="en">Acidic or alkaline?</span><span class="my">Acidic လား alkaline လား?</span></h3>
+    <svg class="illus" viewBox="0 0 560 232" role="img" aria-label="Two beakers: an acidic solution full of H plus ions and an alkaline solution full of OH minus ions">
+      <path d="M62 80 V190 Q62 198 70 198 H210 Q218 198 218 190 V80Z" fill="#F9D3D9"/><path d="M60 30 V190 Q60 200 70 200 H210 Q220 200 220 190 V30" fill="none" stroke="var(--ink-soft)" stroke-width="3"/>
+      <g font-size="18" font-weight="700" fill="#8E1B2C" text-anchor="middle"><text x="96" y="118">H⁺</text><text x="166" y="108">H⁺</text><text x="124" y="160">H⁺</text><text x="188" y="166">H⁺</text><text x="88" y="182">H⁺</text></g>
+      <path d="M342 80 V190 Q342 198 350 198 H490 Q498 198 498 190 V80Z" fill="#D3E2FA"/><path d="M340 30 V190 Q340 200 350 200 H490 Q500 200 500 190 V30" fill="none" stroke="var(--ink-soft)" stroke-width="3"/>
+      <g font-size="18" font-weight="700" fill="#143F8C" text-anchor="middle"><text x="378" y="118">OH⁻</text><text x="450" y="108">OH⁻</text><text x="404" y="160">OH⁻</text><text x="470" y="168">OH⁻</text><text x="372" y="184">OH⁻</text></g>
+      <text x="140" y="226" font-size="16" font-weight="700" text-anchor="middle" fill="var(--ink)"><tspan class="en">Acidic solution</tspan><tspan class="my">Acidic solution (အက်ဆစ်)</tspan></text>
+      <text x="420" y="226" font-size="16" font-weight="700" text-anchor="middle" fill="var(--ink)"><tspan class="en">Alkaline solution</tspan><tspan class="my">Alkaline solution (အယ်ကာလိုင်း)</tspan></text>
+    </svg>
+    <p class="note en" style="margin-top:12px">In acidic solution, balance O with H₂O and H with H⁺. In alkaline solution, do the same, then add OH⁻ to both sides so that H⁺ + OH⁻ → H₂O.</p>
+    <p class="note my" style="margin-top:12px">Acidic solution မှာ O ကို H₂O နဲ့၊ H ကို H⁺ နဲ့ ချိန်ညှိပါ။ Alkaline solution မှာလည်း အတူတူ လုပ်ပြီး H⁺ + OH⁻ → H₂O ဖြစ်အောင် OH⁻ ကို နှစ်ဖက်လုံး ထည့်ပါ။</p>
+  </div>
+
+  <h3><span class="en">Half-equation method: the order to follow</span><span class="my">Half-equation နည်း: လိုက်နာရမည့် အစီအစဉ်</span></h3>
+  <ol class="rules en">
+    <li>Write the unbalanced equation in ionic form.</li>
+    <li>Write separate half-reactions for oxidation and reduction.</li>
+    <li>Balance atoms other than O and H.</li>
+    <li>Balance O by adding <span class="c">H2O</span>.</li>
+    <li>Balance H by adding <span class="c">H^+</span> ions.</li>
+    <li>Balance the charge of each half-equation with electrons.</li>
+    <li>Multiply so both half-equations have the same number of electrons.</li>
+    <li>Add the half-equations and cancel electrons and common terms. In alkaline solution, add <span class="c">OH^-</span> to both sides to turn <span class="c">H^+</span> into water.</li>
+  </ol>
+  <ol class="rules my">
+    <li>ချိန်ညှိရသေးတဲ့ ညီမျှခြင်းကို ionic ပုံစံဖြင့် ရေးပါ။</li>
+    <li>Oxidation နဲ့ reduction အတွက် half-reaction တွေကို သီးခြားစီ ရေးပါ။</li>
+    <li>O နဲ့ H မဟုတ်တဲ့ atom တွေကို ချိန်ညှိပါ။</li>
+    <li><span class="c">H2O</span> ထည့်ပြီး O ကို ချိန်ညှိပါ။</li>
+    <li><span class="c">H^+</span> ion ထည့်ပြီး H ကို ချိန်ညှိပါ။</li>
+    <li>Half-equation တစ်ခုချင်းရဲ့ charge ကို electron နဲ့ ချိန်ညှိပါ။</li>
+    <li>Half-equation နှစ်ခုလုံးမှာ electron အရေအတွက် တူအောင် မြှောက်ပါ။</li>
+    <li>Half-equation တွေကို ပေါင်းပြီး electron နဲ့ တူညီတဲ့ အရာတွေကို ချေဖျက်ပါ။ Alkaline solution မှာဆိုရင် <span class="c">H^+</span> ကို ရေ ဖြစ်အောင် <span class="c">OH^-</span> ကို နှစ်ဖက်လုံး ထည့်ပါ။</li>
+  </ol>
+</section>
+
+<!-- ================= PRACTICE ================= -->
+<section class="view" data-view="practice" hidden>
+  <span class="kicker"><span class="en">Practice</span><span class="my">လေ့ကျင့်ခန်း</span></span>
+  <h2><span class="en">Practice quiz</span><span class="my">လေ့ကျင့်ရန် Quiz</span></h2>
+  <p class="lead en">Choose a section. You get feedback and an explanation after every question.</p>
+  <p class="lead my">အခန်းခွဲ တစ်ခု ရွေးပါ။ မေးခွန်းတိုင်း ဖြေပြီးတာနဲ့ အဖြေနဲ့ ရှင်းလင်းချက် ပြပေးပါတယ်။</p>
+  <div class="row" id="topicChips" role="group" aria-label="Choose a section"></div>
+  <div id="practiceArea"></div>
+</section>
+
+<!-- ================= TEST ================= -->
+<section class="view" data-view="chapter-test" hidden>
+  <span class="kicker"><span class="en">Chapter end test</span><span class="my">အခန်းဆုံး စာမေးပွဲ</span></span>
+  <h2><span class="en">Oxidation and reduction test</span><span class="my">Oxidation နှင့် reduction စာမေးပွဲ</span></h2>
+  <div id="testArea"></div>
+</section>
+
+</main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
