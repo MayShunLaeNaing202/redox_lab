@@ -16,7 +16,7 @@ function chem(s){
 function renderChem(root){
   root=root||document;
   $$('.c',root).forEach(el=>{ if(el.dataset.done) return; el.innerHTML=chem(el.textContent); el.dataset.done='1'; });
-  $$('.ox',root).forEach(el=>{ if(el.dataset.done) return; el.innerHTML='<span class="ox-n">'+esc(el.dataset.n)+'</span><span>'+chem(el.textContent)+'</span>'; el.dataset.done='1'; });
+  $$('.ox',root).forEach(el=>{ if(el.dataset.done||el.dataset.n===undefined) return; el.innerHTML='<span class="ox-n">'+esc(el.dataset.n)+'</span><span>'+chem(el.textContent)+'</span>'; el.dataset.done='1'; });
 }
 const store={
   get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },

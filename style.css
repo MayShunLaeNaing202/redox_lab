@@ -246,7 +246,7 @@ details.reveal div{padding:8px 0 0 1.2em;color:var(--ink-soft)}
 
 /* Desktop: top navigation bar */
 @media (min-width:901px){
-  .shell{grid-template-columns:1fr}
+  .shell{grid-template-columns:minmax(0,1fr)}
   .side{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;height:auto;overflow:visible;display:flex;align-items:center;gap:18px;padding:10px clamp(16px,3vw,40px);border-right:0;box-shadow:0 1px 0 rgba(0,0,0,.08)}
   body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--side)}
   .side .brand{margin:0;flex:none}
@@ -278,7 +278,7 @@ details.reveal div{padding:8px 0 0 1.2em;color:var(--ink-soft)}
 
 /* Mobile */
 @media (max-width:900px){
-  .shell{grid-template-columns:1fr}
+  .shell{grid-template-columns:minmax(0,1fr)}
   .topbar{display:flex;position:sticky;top:env(safe-area-inset-top,0px);z-index:20;align-items:center;justify-content:space-between;padding:10px 16px;background:var(--side);color:#fff;border-bottom:0}
   body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--side)}
   .topbar .brand{margin:0}
@@ -287,7 +287,7 @@ details.reveal div{padding:8px 0 0 1.2em;color:var(--ink-soft)}
   .side .brand{display:none}
   main{padding-top:28px}
   .life{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .pair,.sort-bins{grid-template-columns:1fr}
+  .pair,.sort-bins{grid-template-columns:minmax(0,1fr)}
   .calc-form{grid-template-columns:1fr 1fr}
   .calc-form .field:first-child{grid-column:1 / -1}
   .bar-row{grid-template-columns:1fr 3em}
@@ -306,3 +306,9 @@ html[data-lang="my"] h2{font-size:clamp(1.5rem,3vw,2rem)}
 html[data-lang="my"] .steps > li::before{content:"အဆင့် " counter(s)}
 html[data-lang="my"] .steps > li{padding-left:3.6em}
 .lang-toggle{font-family:"Noto Sans Myanmar","Atkinson Hyperlegible",sans-serif;font-weight:600}
+/* Keep wide content (charts, equations) inside the screen on phones */
+main{min-width:0}
+html,body{overflow-x:clip}
+.steps > li::before{width:3.4em;white-space:nowrap}
+.steps > li{padding-left:3.9em}
+html[data-lang="my"] .steps > li{padding-left:4.4em}
